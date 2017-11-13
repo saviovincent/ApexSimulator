@@ -127,41 +127,14 @@ public class Main {
 
         //explicitly flush the 5 stage pipeline
 
-        stats.setCycle(statsCounter++);
-        System.out.println("-------t = "+ stats.getCycle() +"----------");
-        System.out.println();
-        writeback.execute(fetch, decode, integerFU, mul1, mul2, memory, writeback, null, registerFile,dataMemory,div1,div2,div3,div4);
-        System.out.println();
-        System.out.println();
-
-        stats.setCycle(statsCounter++);
-        System.out.println("-------t = "+ stats.getCycle() +"----------");
-        System.out.println();
-        writeback.execute(fetch, decode, integerFU, mul1, mul2, memory, writeback, null, registerFile,dataMemory,div1, div2,div3,div4);
-        System.out.println();
-        System.out.println();
-
-        stats.setCycle(statsCounter++);
-        System.out.println("-------t = "+ stats.getCycle() +"----------");
-        System.out.println();
-        writeback.execute(fetch, decode, integerFU, mul1, mul2, memory, writeback, null, registerFile,dataMemory,div1, div2,div3,div4);
-        System.out.println();
-        System.out.println();
-
-        stats.setCycle(statsCounter++);
-        System.out.println("-------t = "+ stats.getCycle() +"----------");
-        System.out.println();
-        writeback.execute(fetch, decode, integerFU, mul1, mul2, memory, writeback, null, registerFile,dataMemory,div1, div2,div3,div4);
-        System.out.println();
-        System.out.println();
-
-        stats.setCycle(statsCounter++);
-        System.out.println("-------t = "+ stats.getCycle() +"----------");
-        System.out.println();
-        writeback.execute(fetch, decode, integerFU, mul1, mul2, memory, writeback, null, registerFile,dataMemory,div1, div2,div3,div4);
-        System.out.println();
-        System.out.println();
-
+        for (int i = 0; i < 5 ; i++) {
+            stats.setCycle(statsCounter++);
+            System.out.println("-------t = "+ stats.getCycle() +"----------");
+            System.out.println();
+            writeback.execute(fetch, decode, integerFU, mul1, mul2, memory, writeback, null, registerFile,dataMemory,div1,div2,div3,div4);
+            System.out.println();
+            System.out.println();
+        }
 
         //display memory values
         for (int i = 0; i < dataMemory.getData_array().length; i++) {
